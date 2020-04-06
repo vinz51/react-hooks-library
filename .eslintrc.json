@@ -1,0 +1,57 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint-config-react-app",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "prettier"
+  ],
+  "parser": "babel-eslint",
+  "plugins": [
+    "react",
+    "jest",
+    "jasmine",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-mixed-spaces-and-tabs": [2, "smart-tabs"],
+    "jest/lowercase-name": [
+      "error",
+      {
+        "ignore": ["describe", "test"]
+      }
+    ],
+    "jest/no-empty-title": "error",
+    "jest/no-identical-title": "error",
+    "jasmine/new-line-before-expect": "error",
+    "jasmine/new-line-between-declarations": "error",
+    "react/require-default-props": [2, {
+      "forbidDefaultForRequired": true
+    }]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["./src/"],
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      },
+      "webpack": {
+        "config": "./config/webpack.common.js"
+      }
+    },
+    "react": {
+      "version": "detect"
+    }
+  }
+}
